@@ -18,7 +18,7 @@
     <% @recipes.each do |recipe| %>
       <tr>
         <td><%= recipe.title %></td>
-        <td><%= recipe.photo %></td>
+        <td><%= image_tag recipe.photo.thumb %></td>
         <td><%= recipe.cant %></td>
         <td><%= recipe.ingredients %></td>
         <td><%= recipe.directions %></td>

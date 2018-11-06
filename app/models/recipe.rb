@@ -1,5 +1,7 @@
 class Recipe < ApplicationRecord
-	belongs_to :user
+	mount_uploader :photo, PhotoUploader
+
+	belongs_to :user, optional: true
 	has_many :tags
 	has_many :users, through: :tags
 	has_many :comments
