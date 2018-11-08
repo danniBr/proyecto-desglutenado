@@ -13,11 +13,27 @@ class CommentsController < ApplicationController
      @question = Question.find(params[:question_id])
      @comment = @question.comments.new(comment_params)
      @comment.user_id = current_user.id
-     @comment.save!
+     respond_to do |format|
+      if @comment.save
+        format.js
+        format.json { render :show, status: :created, location: @comment }
+      else
+        format.html { render :show }
+      end
+    end
+
   end
   
   def show
     @comment = Comment.find(params[:id])
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    respond_to do |format|
+      format.js
+    end
   end
  
   private def comment_params

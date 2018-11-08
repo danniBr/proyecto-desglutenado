@@ -1,0 +1,5 @@
+<li id="<%= comment.id %>">
+	<%= comment.comment %> 
+	<%= link_to 'Destroy', delete_comment_path(@question, comment) , method: :delete, data: { remote: true, confirm: 'Are you sure?' } %>
+	
+</li>
