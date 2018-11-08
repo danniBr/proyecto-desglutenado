@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   belongs_to :question
-  belongs_to :recipe
+  belongs_to :recipe, optional: true
 end
