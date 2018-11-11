@@ -18,7 +18,8 @@ class CommentsController < ApplicationController
         format.js
         format.json { render :show, status: :created, location: @comment }
       else
-        format.html { render :show }
+        format.html { render :show, notice: 'Debes logearte para comentar' }
+        format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
 
