@@ -33,6 +33,7 @@ gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rails-erd', group: :development
+gem 'geocoder'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
