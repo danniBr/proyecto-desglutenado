@@ -2,12 +2,26 @@ class LocationsController < ApplicationController
   #before_action :authenticate_user!, only: [:new, :create]
 
   def findaddress
-	@address = Geocoder.address([params[:latitude], params[:longitude]] )
+	  @address = Geocoder.address([params[:latitude], params[:longitude]] )
   end	
  
 
   def index
-    @locations = Location.all
+    #@locations = Location.all
+    if params[:latitude].present? && params[:longitude].present?
+      @locations = Location.near(
+        [params[:latitude], params[:longitude]],
+        10_000,
+        units: :km
+      )
+    else
+      @locations = Location.all
+    end
+
+    @hash = Gmaps4rails.build_markers(@locations) do |location, marker|
+    marker.lat location.latitude
+    marker.lng location.longitude
+end
   end
 
   def new
@@ -36,7 +50,8 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
     @location.destroy
     respond_to do |format|
-      format.js
+      format.html { redirect_to locations_url, notice: 'Location was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 
