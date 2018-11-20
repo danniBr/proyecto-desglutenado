@@ -35,6 +35,7 @@ gem 'mini_magick'
 gem 'rails-erd', group: :development
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'omniauth-facebook'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
