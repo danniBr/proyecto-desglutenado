@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
+
   get 'locations/findaddress', to: 'locations#findaddress'
   
   devise_for :users, controllers: {
       registrations: 'users/registrations'
    }, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  
+  resources :recipes do
+    resources :likes
+  end
 
-  resources :recipes
   resources :locations
   resources :questions do
     resources :comments
