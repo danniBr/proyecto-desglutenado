@@ -19,22 +19,6 @@
  	font-size: 16px;
  	color: #4a3b26;
  }
-.inicio {
-	padding-top: 4rem;
-	background: #fafafa;
-	margin-top: -6rem;
-}
-.inicio h2 {
-	padding-top: 10rem;
-}
-.inicio h2 span {
-	font-weight: bold;
-	display: block;
-    font-size: 3rem;
-}
-.inicio img {
-	padding-bottom: 2rem;
-}
 .navbar-expand-lg .navbar-nav .nav-link {
 	background: #ececec;
     border-radius: 3px;
@@ -52,17 +36,19 @@
     border-radius: 25px;
     color: #ffffff;
     font-weight: bold;
-    margin: 15px 0;
+    margin: 20px 0;
 }
 .btn:hover {
 	background-color: #666666;
 	color: #ffffff;
 }
-.menu {
-	background: #eaeaea;
+.ver-todo {
+  padding: 5px 12px;
+  font-size: 0.9rem;
+  margin-left: 10px;
 }
-.menu p {
-	padding: 30px 0;
+.color1 {
+  background-color: #f5c95c;
 }
 .color2 {
 	background-color: #e96b00;
@@ -72,4 +58,9 @@
 }
 .color4 {
 	background-color: #5c3024;
+}
+h4 {
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
