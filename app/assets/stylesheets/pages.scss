@@ -1,3 +1,43 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.inicio {
+	padding-top: 4rem;
+	background: #fafafa;
+	margin-top: -6rem;
+}
+.inicio h2 {
+	padding-top: 10rem;
+}
+.inicio h2 span {
+	font-weight: bold;
+	display: block;
+    font-size: 3rem;
+}
+.inicio img {
+	padding-bottom: 2rem;
+}
+.menu {
+	background: #eaeaea;
+}
+.menu p {
+	padding: 35px 0;
+  margin: 0;
+}
+.recetas .foto img {
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 50px 0 20px;
+  display: inline-block;
+}
+.modulo {
+    border: 1px solid #dedcdc;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin-bottom: 30px;
+}
