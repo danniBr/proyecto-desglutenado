@@ -18,8 +18,8 @@
 				<div class="col-md-7">
 					<%= link_to 'Recetas', recipes_path, :class => 'btn color1' %>
 					<%= link_to 'Preguntas', questions_path, :class => 'btn color2' %>
-					<a href="#" class="btn color3">Donde comprar</a>
-					<a href="#" class="btn color4">Nuevos productos</a>
+					<%= link_to 'Donde comprar', locations_path, :class => 'btn color3' %>
+					<a href="#" class="btn color4">Datos</a>
 				</div>
 			</div>
 		</div>
@@ -36,19 +36,41 @@
 				<% @recipes.each do |recipe| %>
 					<div class="col-md-3">
 						<div class="modulo">
-						  <div class="foto"><%= image_tag recipe.photo %></div>
-						  <h4><%= recipe.title %></h4>
-							<div class="row">
-								<div class="col-md-6">
-									Cantidad: <span><%= recipe.cant %> personas</span>
-								</div>
-								<div class="col-md-6">
-									<i class="fas fa-heart"></i>
-								</div>
-							</div>
+							<a href="<%= recipe_path(recipe) %>" class="">
+							  <div class="foto"><%= image_tag recipe.photo %></div>
+							  <h4><%= recipe.title %></h4>
+									<div class="dato">
+										Cantidad: <span><%= recipe.cant %> porciones</span>
+									</div>
+									<div class="dato">
+										Tiempo: <span><%= recipe.cant %></span>
+									</div>
+									<div class="dato likes">
+										<i class="fa fa-heart"></i><%= recipe.likes.count %>
+									</div>
+						  </a>
 					  </div>
 					</div>
 				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="locations">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<!-- agregar mapa aquí -->
+				</div>
+				<div class="col-md-6">
+					<% @locations.each do |location| %>
+							<div class="">
+								<a href="<%= location_path(location) %>" class="">
+								  <h4><%= location.location %></h4>
+							  </a>
+						  </div>
+
+					<% end %>
+			  </div>
 			</div>
 		</div>
 	</div>

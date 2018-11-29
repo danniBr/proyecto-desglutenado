@@ -6,13 +6,25 @@
 	background: #fafafa;
 	margin-top: -6rem;
 }
-.inicio h2 {
+h2 {
 	padding-top: 10rem;
 }
-.inicio h2 span {
+h2 span {
 	font-weight: bold;
 	display: block;
     font-size: 3rem;
+}
+h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 50px 0 20px;
+  display: inline-block;
+}
+h4 {
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+	margin: 0;
 }
 .inicio img {
 	padding-bottom: 2rem;
@@ -29,15 +41,30 @@
   height: auto;
   padding: 0;
 }
-h3 {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  padding: 50px 0 20px;
-  display: inline-block;
-}
 .modulo {
     border: 1px solid #dedcdc;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
     margin-bottom: 30px;
+}
+.modulo a {
+	text-decoration: none;
+	color: #4a3b26;
+}
+.recetas .likes i {
+	color: #e20e3f;
+	font-size: 20px;
+	padding: 7px;
+}
+.recetas .dato {
+	display: inline-block;
+  font-size: 12px;
+  padding: 0 10px 7px;
+}
+.recetas .dato > span {
+	display: block;
+}
+.recetas .dato.likes {
+	float: right;
+	font-size: 16px;
 }
