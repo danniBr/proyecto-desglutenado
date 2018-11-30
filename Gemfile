@@ -36,6 +36,7 @@ gem 'rails-erd', group: :development
 gem 'geocoder'
 gem 'gmaps4rails'
 gem 'omniauth-facebook'
+gem 'activeadmin'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

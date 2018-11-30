@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'locations/findaddress', to: 'locations#findaddress'
   
   devise_for :users, controllers: {
