@@ -1,37 +1,40 @@
-<div class="container">
-  <h2>Sign up</h2>
+<div class="login container-fluid">
+  <div class="row">
+    <div class="fondo-signup col-md-6 d-none d-sm-block"></div>
+    <div class="col-md-6">
+        <div class="align-form">
+          <h2>Registrarse</h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name, autofocus: true %>
-    </div>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-    <div class="field">
-      <%= f.label :photo %><br />
-      <%= f.file_field :photo, id: :photo_image %>
-    </div>
-    <div class="field">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+            <div class="field">
+              <%= f.text_field :name, autofocus: true, placeholder: 'Nombre' %>
+            </div>
+            <div class="field">
+              <%= f.email_field :email, autocomplete: "email", placeholder: 'Email' %>
+            </div>
+            <div class="field">
+              <%= f.password_field :password, autocomplete: "new-password", placeholder: 'contraseña' %>
+            </div>
+            <div class="field">
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'repetir contraseña' %>
+              <% if @minimum_password_length %>
+              <em class="minimo">(mínimo <%= @minimum_password_length %> caracteres)</em>
+              <% end %>
+            </div>
+            <div class="field">
+              <span class="btn-file">
+                  <i class="fa fa-camera"></i> Subir foto
+                <%= f.file_field :photo, id: :photo_image, placeholder: 'Foto' %>
+              </span>
+            </div>
+            <div class="actions">
+              <%= f.submit "Enviar", :class => 'btn' %>
+            </div>
+          <% end %>
 
-    <div class="field">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          <%= render "devise/shared/links" %>
+      </div>
     </div>
-
-    <div class="actions">
-      <%= f.submit "Sign up" %>
-    </div>
-  <% end %>
-
-  <%= render "devise/shared/links" %>
+  </div>
 </div>

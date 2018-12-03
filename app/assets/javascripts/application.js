@@ -17,3 +17,7 @@
 //= require underscore/underscore
 //= require gmaps/google
 //= require_tree .
+
+$(window).scroll(function(){
+	$('.navbar').toggleClass('scrolled', $(this).scrollTop() > 70);
+});
