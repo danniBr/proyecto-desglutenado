@@ -15,11 +15,10 @@
 	  <strong>Ubication:</strong>
 	  <%= @location.location %>
 	</p>
-
+  <% if can? :manage, @location %>
 	<%= link_to 'Edit', edit_location_path(@location) %> |
+	<% end %>
 	<%= link_to 'Back', locations_path %>
 
 
 </div>
-
-

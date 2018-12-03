@@ -1,10 +1,11 @@
 class LocationsController < ApplicationController
-  #before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create]
+  load_and_authorize_resource
 
   def findaddress
 	  @address = Geocoder.address([params[:latitude], params[:longitude]] )
-  end	
- 
+  end
+
 
   def index
     #@locations = Location.all
@@ -41,7 +42,7 @@ end
       end
     end
   end
-  
+
   def show
     @location = Location.find(params[:id])
   end

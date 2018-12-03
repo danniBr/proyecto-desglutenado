@@ -1,6 +1,6 @@
 <li id="<%= comment.id %>">
-	<%= comment.comment %> 
-	<% if current_user.present? %>
-	<%= link_to 'Destroy', delete_comment_path(@question, comment) , method: :delete, data: { remote: true, confirm: 'Are you sure?' } %>
+	<%= comment.comment %>
+	<% if can? :manage, comment %>
+	  <%= link_to 'Destroy', delete_comment_path(@question, comment) , method: :delete, data: { remote: true, confirm: 'Are you sure?' } %>
 	<% end %>
 </li>

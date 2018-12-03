@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
-
+  load_and_authorize_resource
+  
   def index
     @comments = Comment.all
   end
@@ -24,7 +25,7 @@ class CommentsController < ApplicationController
     end
 
   end
-  
+
   def show
     @comment = Comment.find(params[:id])
   end
@@ -36,7 +37,7 @@ class CommentsController < ApplicationController
       format.js
     end
   end
- 
+
   private def comment_params
     params.require(:comment).permit(:comment, :user_id)
   end
