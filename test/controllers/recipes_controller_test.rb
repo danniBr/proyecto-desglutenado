@@ -1,48 +1,68 @@
 require 'test_helper'
 
 class RecipesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @recipe = recipes(:one)
   end
 
-  test "should get index" do
-    get recipes_url
-    assert_response :success
-  end
-
-  test "should get new" do
-    get new_recipe_url
-    assert_response :success
-  end
-
-  test "should create recipe" do
-    assert_difference('Recipe.count') do
-      post recipes_url, params: { recipe: { cant: @recipe.cant, directions: @recipe.directions, ingredients: @recipe.ingredients, photo: @recipe.photo, title: @recipe.title } }
-    end
-
-    assert_redirected_to recipe_url(Recipe.last)
-  end
-
-  test "should show recipe" do
-    get recipe_url(@recipe)
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_recipe_url(@recipe)
-    assert_response :success
-  end
-
-  test "should update recipe" do
-    patch recipe_url(@recipe), params: { recipe: { cant: @recipe.cant, directions: @recipe.directions, ingredients: @recipe.ingredients, photo: @recipe.photo, title: @recipe.title } }
-    assert_redirected_to recipe_url(@recipe)
-  end
-
-  test "should destroy recipe" do
+  test "user should delete his own recipe" do
+    current_user = users(:one)
+    sign_in(current_user)
     assert_difference('Recipe.count', -1) do
-      delete recipe_url(@recipe)
+      delete recipe_path(recipes(:one))
     end
-
-    assert_redirected_to recipes_url
   end
+
+  test "user should not delete others recipes" do
+    current_user = users(:one)
+    sign_in(current_user)
+    assert_difference('Recipe.count', 0) do
+      delete recipe_path(recipes(:two))
+    end
+    assert_redirected_to root_url
+  end
+  
+  # test "should get index" do
+  #   get recipes_url
+  #   assert_response :success
+  # end
+  #
+  # test "should get new" do
+  #   get new_recipe_url
+  #   assert_response :success
+  # end
+  #
+  # test "should create recipe" do
+  #   assert_difference('Recipe.count') do
+  #     post recipes_url, params: { recipe: { cant: @recipe.cant, directions: @recipe.directions, ingredients: @recipe.ingredients, photo: @recipe.photo, title: @recipe.title } }
+  #   end
+  #
+  #   assert_redirected_to recipe_url(Recipe.last)
+  # end
+  #
+  # test "should show recipe" do
+  #   get recipe_url(@recipe)
+  #   assert_response :success
+  # end
+  #
+  # test "should get edit" do
+  #   get edit_recipe_url(@recipe)
+  #   assert_response :success
+  # end
+  #
+  # test "should update recipe" do
+  #   patch recipe_url(@recipe), params: { recipe: { cant: @recipe.cant, directions: @recipe.directions, ingredients: @recipe.ingredients, photo: @recipe.photo, title: @recipe.title } }
+  #   assert_redirected_to recipe_url(@recipe)
+  # end
+  #
+  # test "should destroy recipe" do
+  #   assert_difference('Recipe.count', -1) do
+  #     delete recipe_url(@recipe)
+  #   end
+  #
+  #   assert_redirected_to recipes_url
+  # end
+
 end

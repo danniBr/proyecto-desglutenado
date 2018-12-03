@@ -3,9 +3,9 @@
 one:
   title: MyString
   description: MyText
-  locacion: MyString
+  location: MyString
 
 two:
   title: MyString
   description: MyText
-  locacion: MyString
+  location: MyString

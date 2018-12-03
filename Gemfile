@@ -37,6 +37,7 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'omniauth-facebook'
 gem 'activeadmin'
+gem 'cancancan'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

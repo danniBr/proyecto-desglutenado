@@ -6,6 +6,7 @@ one:
   cant: 1
   ingredients: MyText
   directions: MyText
+  user: one
 
 two:
   title: MyString
@@ -13,3 +14,4 @@ two:
   cant: 1
   ingredients: MyText
   directions: MyText
+  user: two
