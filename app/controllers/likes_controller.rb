@@ -10,10 +10,10 @@ class LikesController < ApplicationController
         @new_likes_count = @recipe.likes.count
         format.html { redirect_to @recipe, notice: 'Me gusta' }
         format.js
-      end
       else
         @new_likes_count = @recipe.likes.count
         format.html { redirect_to @recipe, notice: 'Me gusta falló' }
+      end
     end
   end
 end
