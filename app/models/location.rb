@@ -4,4 +4,6 @@ class Location < ApplicationRecord
 	geocoded_by :location
 	reverse_geocoded_by :latitude, :longitude, :address => :location
     after_validation :geocode
+
+	validates :title, :description, :location , :presence => true
 end
