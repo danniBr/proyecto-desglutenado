@@ -1,0 +1,328 @@
+body {
+ font-size: 16px;
+ color: #4a3b26;
+ font-family: 'open_sansregular';
+}
+h1, h2, h3, h4, h5, h6 {
+ color: #4a3b26;
+}
+.navbar {
+ z-index: 2;
+ height: 12vh;
+ background: transparent;
+ border: 0;
+ -webkit-transition: all 500ms ease;
+ transition: all 500ms ease;
+}
+.navbar.scrolled{
+ background:#fafafa;
+ border-bottom: 1px solid #ececec;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+   background: #ececec;
+   border-radius: 3px;
+   margin:0 5px;
+   padding: 10px 20px;
+   color: #4a3b26;
+   -webkit-transition: all .2s linear;
+   transition: all .2s linear;
+}
+.navbar-expand-lg .navbar-nav .nav-link:hover {
+ background-color: #ea9a31;
+ color: #ffffff;
+}
+.navbar-brand {
+ margin-right: 30px;
+}
+
+.btn, input.btn {
+ display: inline-block;
+   background: #ea9a31;
+   padding: 10px 20px;
+   border-radius: 25px;
+   color: #ffffff;
+   font-weight: bold;
+   margin: 20px 0;
+}
+.btn:hover {
+ background-color: #666666;
+ color: #ffffff;
+}
+.ver-todo {
+ padding: 5px 12px;
+ font-size: 0.9rem;
+ margin-left: 10px;
+}
+.color1 {
+ background-color: #f5c95c;
+}
+.color2 {
+ background-color: #e96b00;
+}
+.color3 {
+ background-color: #7a3900;
+}
+.color4 {
+ background-color: #5c3024;
+}
+.fa.fa-navicon {
+ color:white;
+}
+.fondo-login {
+ height: 88vh;
+ background: url(img-login.jpg) no-repeat 0 0;
+ background-size: cover;
+}
+.login h2 {
+ font-family: 'open_sansbold';
+ margin-bottom: 10px;
+ padding-top: 5rem;
+}
+.login .field {
+ margin-top: 25px;
+}
+.login .field label {
+ color: #ea9d33;
+ font-family: 'open_sansbold';
+}
+.login .field input {
+ width: 100%;
+ border: 0;
+ outline: none;
+ border-bottom: 2px solid #ea9d33;
+ box-shadow: none;
+ padding: 5px;
+}
+.login .field.check input {
+ width: auto;
+}
+.login .align-form {
+ width: 70%;
+ margin: 0 auto;
+}
+.login .btn {
+ width: 100%;
+}
+.login .enlace {
+ color: #6b6b6b;
+ display: inline-block;
+ margin-top: 8px;
+ font-size: 14px;
+}
+.fondo-signup {
+ height: 88vh;
+ background: url(img-signup-1.jpg) no-repeat 0 0;
+ background-size: cover;
+}
+.btn-file {
+   position: relative;
+   overflow: hidden;
+   display: block;
+   color: #5a5a5a;
+   font-size: 18px;
+}
+.btn-file input[type=file] {
+   position: absolute;
+   top: 0;
+   right: 0;
+   min-width: 100%;
+   min-height: 100%;
+   font-size: 100px;
+   text-align: right;
+   filter: alpha(opacity=0);
+   opacity: 0;
+   outline: none;
+   background: white;
+   cursor: inherit;
+   display: block;
+}
+.minimo {
+ font-size: 12px;
+ color: #92857a;
+}
+.banner {
+ background-size: cover;
+ height: 35vh;
+}
+.inicio {
+	padding-top: 4rem;
+	background: #fafafa;
+	margin-top: -12vh;
+	height: 85vh;
+}
+.inicio h2 {
+	padding-top: 10rem;
+	font-size: 2rem;
+	letter-spacing: -1px;
+}
+h2 span {
+	font-family: 'open_sansbold';
+	display: block;
+	font-size: 3rem;
+	letter-spacing: -2px;
+}
+h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  padding: 50px 0 20px;
+  display: inline-block;
+}
+h4 {
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+	margin: 0;
+}
+.inicio img {
+	padding-bottom: 2rem;
+}
+.menu {
+	height: 15vh;
+	background: #eaeaea;
+}
+.menu p {
+	padding: 35px 0;
+  margin: 0;
+}
+.menu .botonera {
+	text-align: right;
+}
+.recetas .foto img {
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+.modulo {
+    border: 1px solid #dedcdc;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin-bottom: 30px;
+		position: relative;
+}
+.modulo a {
+	text-decoration: none;
+	color: #4a3b26;
+}
+.modulo .actions {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+.modulo .actions a {
+	background: #4a3b26;
+	color: #ffffff;
+	padding: 5px;
+	font-size: 13px;
+	border-radius: 3px;
+	display: inline-block;
+}
+.modulo .actions a:hover {
+	background: #ea9a31;
+}
+.recetas .likes i {
+	color: #e20e3f;
+	font-size: 20px;
+	padding: 7px;
+}
+.recetas .dato {
+	display: inline-block;
+  font-size: 12px;
+  padding: 0 10px 7px;
+}
+.recetas .dato > span {
+	display: block;
+}
+.recetas .dato.likes {
+	float: right;
+	font-size: 16px;
+}
+.interior h1 {
+ background: #4a3b26;
+ display: inline-block;
+ color: #ffffff;
+ font-family: 'open_sansbold';
+ margin: -60px 0 30px 0;
+ padding: 10px 30px;
+}
+.banner {
+  background: url(img-banner.jpg) no-repeat fixed 0 0;
+}
+.detalle h1 {
+  font-family: 'open_sansbold';
+  text-transform: uppercase;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #c1c1c1;
+}
+.detalle .likes i {
+  color: #e20e3f;
+  font-size: 30px;
+  padding: 7px;
+}
+.detalle .dato.likes {
+  font-size: 20px;
+  font-family: 'open_sansbold';
+}
+.detalle h2 {
+ padding-top: 30px;
+ font-family: 'open_sansbold';
+ font-size: 24px;
+ padding-bottom: 10px;
+ text-transform: uppercase;
+ border-bottom: 1px solid #c1c1c1;
+}
+.box {
+ margin: 10px;
+ padding: 20px;
+ border: 1px solid #eaeaea;
+ background: #f1f1f1;
+}
+.detalle h3 {
+ margin: 0;
+ padding-top: 20px;
+ font-family: 'open_sansbold';
+ font-size: 18px;
+}
+/*styles for forms */
+.form .bg i {
+ font-size: 9rem;
+ color: #ffffff;
+}
+.form .row > div {
+ display: flex;
+ background: #f4f4f4;
+ align-items: center;
+ justify-content: center;
+}
+.form div.bg {
+ height: 88vh;
+ background-color: #ea9a31;
+}
+.form h1 {
+ font-family: 'open_sansbold';
+ text-transform: uppercase;
+ padding-bottom: 10px;
+}
+.form .field {
+ margin-top: 15px;
+}
+.form .field label {
+ min-width: 100px;
+}
+.form .field input,
+.form .field textarea {
+ min-width: 250px;
+ padding: 5px 10px;
+ background: #ffffff;
+ border-radius: 2px;
+ border: 1px solid #eaeaea;
+ outline: none;
+}
+.form .btn-file {
+ display: inline-block;
+}
+.btn.volver {
+ position: absolute;
+ top: 0;
+ right: 20px;
+ background: #4a3b26;
+}

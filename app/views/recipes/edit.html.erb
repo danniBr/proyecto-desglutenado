@@ -1,6 +1,14 @@
-<h1>Editing Recipe</h1>
-
-<%= render 'form', recipe: @recipe %>
-
-<%= link_to 'Show', @recipe %> |
-<%= link_to 'Back', recipes_path %>
+<div class="form container-fluid">
+  <div class="row">
+    <div class="bg col-md-3">
+      <%= link_to 'Volver a recetas', recipes_path, :class => 'btn volver' %>
+      <i class="fa fa-book"></i>
+    </div>
+    <div class="col-md-9">
+      <div class="container">
+        <h1>Editar Receta</h1>
+        <%= render 'form', recipe: @recipe %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -17,13 +17,16 @@
   </div>
 
   <div class="field">
-    <%= form.label :photo %>
-    <%= form.file_field :photo, id: :recipe_photo %>
+    <%= form.label :cant %>
+    <%= form.number_field :cant, id: :recipe_cant %>
   </div>
 
   <div class="field">
-    <%= form.label :cant %>
-    <%= form.number_field :cant, id: :recipe_cant %>
+    <%= form.label :photo %>
+    <span class="btn-file">
+        <i class="fa fa-camera"></i> Subir foto
+        <%= form.file_field :photo, id: :recipe_photo %>
+    </span>
   </div>
 
   <div class="field">
@@ -37,6 +40,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Ingresar", :class => 'btn' %>
   </div>
 <% end %>

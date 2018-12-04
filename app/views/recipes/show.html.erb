@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 <div class="detalle container">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-5">
       <%= image_tag @recipe.photo, :class => 'img-fluid' %>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-7">
       <%= link_to 'Volver', recipes_path, :class => 'btn' %>
       <h1><%= @recipe.title %></h1>
       <% if can? :manage, @recipe %>
@@ -31,12 +31,16 @@
   </div>
   <div class="row">
     <div class="col-md-6">
-      <h3>Ingredientes:</h3>
-      <%= @recipe.ingredients %>
+      <div class="box">
+        <h3>Ingredientes:</h3>
+        <p><%= @recipe.ingredients %></p>
+      </div>
     </div>
     <div class="col-md-6">
-      <h3>Preparación:</h3>
-      <%= @recipe.directions %>
+      <div class="box">
+        <h3>Preparación:</h3>
+        <p><%= @recipe.directions %></p>
+      </div>
     </div>
   </div>
 </div>

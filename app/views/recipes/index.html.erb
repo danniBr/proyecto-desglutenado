@@ -26,11 +26,20 @@
                   <i class="fa fa-heart"></i><%= recipe.likes.count %>
                 </div>
             </a>
+            <div class="actions">
+              <% if can? :manage, recipe %>
+                <%= link_to edit_recipe_path(recipe) do %>
+                  <i class="fa fa-edit"></i>
+                   <span>Editar</span>
+                <% end %>
+                <%= link_to recipe, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <i class="fa fa-trash"></i>
+                   <span>Borrar</span>
+                <% end %>
+              <% end %>
+            </div>
           </div>
-          <% if can? :manage, recipe %>
-            <%= link_to 'Edit', edit_recipe_path(recipe) %>
-            <%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
+
         </div>
         <% end %>
   </div>
