@@ -25,6 +25,7 @@
 }
 .navbar {
   z-index: 2;
+  height: 12vh;
   background: transparent;
   border: 0;
   -webkit-transition: all 500ms ease;
@@ -85,14 +86,14 @@
   color:white;
 }
 .fondo-login {
-  height: 100vh;
+  height: 88vh;
   background: url(img-login.jpg) no-repeat 0 0;
   background-size: cover;
 }
 .login h2 {
   font-family: 'open_sansbold';
   margin-bottom: 10px;
-  padding-top: 6rem;
+  padding-top: 5rem;
 }
 .login .field {
   margin-top: 25px;
@@ -126,7 +127,7 @@
   font-size: 14px;
 }
 .fondo-signup {
-  height: 100vh;
+  height: 88vh;
   background: url(img-signup-1.jpg) no-repeat 0 0;
   background-size: cover;
 }
@@ -155,4 +156,16 @@
 .minimo {
   font-size: 12px;
   color: #92857a;
+}
+.banner {
+  background-size: cover;
+  height: 35vh;
+}
+.interior h1 {
+  background: #4a3b26;
+  display: inline-block;
+  color: #ffffff;
+  font-family: 'open_sansbold';
+  margin: -60px 0 30px 0;
+  padding: 10px 30px;
 }

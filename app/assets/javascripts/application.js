@@ -18,6 +18,7 @@
 //= require gmaps/google
 //= require_tree .
 
-$(window).scroll(function(){
-	$('.navbar').toggleClass('scrolled', $(this).scrollTop() > 70);
-});
+//nav background on scroll
+// $(window).scroll(function(){
+// 	$('.navbar').toggleClass('scrolled', $(this).scrollTop() > 70);
+// });

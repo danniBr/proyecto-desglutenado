@@ -1,34 +1,42 @@
 <p id="notice"><%= notice %></p>
+<div class="detalle container">
+  <div class="row">
+    <div class="col-md-6">
+      <%= image_tag @recipe.photo, :class => 'img-fluid' %>
+    </div>
+    <div class="col-md-6">
+      <%= link_to 'Volver', recipes_path, :class => 'btn' %>
+      <h1><%= @recipe.title %></h1>
+      <% if can? :manage, @recipe %>
+        <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
+      <% end %>
+      <p>Preparación para <%= @recipe.cant %> personas </p>
+      <p><i class="fa fa-stopwatch"></i> Tiempo de preparación: <%= @recipe.ingredients %></p>
+      <div class="dato likes">
+        <i class="fa fa-heart"></i>
+        <span class="num-like">
+          <%= @recipe.likes.count %>
+        </span>
+        <% if current_user.present? %>
+            <%= link_to "Me gusta", recipe_likes_path(@recipe), method: :post, :remote => true %>
+        <% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @recipe.title %>
-</p>
-
-<p>
-  <strong>Photo:</strong>
-  <%= image_tag @recipe.photo %>
-</p>
-
-<p>
-  <strong>Cant:</strong>
-  <%= @recipe.cant %>
-</p>
-
-<p>
-  <strong>Ingredients:</strong>
-  <%= @recipe.ingredients %>
-</p>
-
-<p>
-  <strong>Directions:</strong>
-  <%= @recipe.directions %>
-</p>
-<% if current_user.present? %>
-  <%= link_to "Like", recipe_likes_path(@recipe), method: :post %>
-<% end %>
-
-<% if can? :manage, @recipe %>
-  <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-<% end %>
-<%= link_to 'Back', recipes_path %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>¿Cómo hacer <%= @recipe.title %> ?</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Ingredientes:</h3>
+      <%= @recipe.ingredients %>
+    </div>
+    <div class="col-md-6">
+      <h3>Preparación:</h3>
+      <%= @recipe.directions %>
+    </div>
+  </div>
+</div>

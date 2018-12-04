@@ -2,16 +2,18 @@ class LikesController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
 
-def create
-  @recipe = Recipe.find(params[:recipe_id])
-  @like = Like.new(user: current_user, recipe: @recipe)
-  if @like.save
-    redirect_to recipes_path
-  else
-    redirect_to root_path
+  def create
+    @recipe = Recipe.find(params[:recipe_id])
+    @like = Like.new(user: current_user, recipe: @recipe)
+    respond_to do |format|
+      if @like.save
+        @new_likes_count = @recipe.likes.count
+        format.html { redirect_to @recipe, notice: 'Me gusta' }
+        format.js
+      end
+      else
+        @new_likes_count = @recipe.likes.count
+        format.html { redirect_to @recipe, notice: 'Me gusta falló' }
+    end
   end
-end
-
-
-
 end

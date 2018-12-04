@@ -4,8 +4,10 @@
 .inicio {
 	padding-top: 4rem;
 	background: #fafafa;
+	margin-top: -12vh;
+	height: 85vh;
 }
-h2 {
+.inicio h2 {
 	padding-top: 10rem;
 	font-size: 2rem;
 	letter-spacing: -1px;
@@ -32,11 +34,15 @@ h4 {
 	padding-bottom: 2rem;
 }
 .menu {
+	height: 15vh;
 	background: #eaeaea;
 }
 .menu p {
 	padding: 35px 0;
   margin: 0;
+}
+.menu .botonera {
+	text-align: right;
 }
 .recetas .foto img {
   width: 100%;
