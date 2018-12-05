@@ -203,20 +203,21 @@ h4 {
 	text-decoration: none;
 	color: #4a3b26;
 }
-.modulo .actions {
+.acciones {
 	position: absolute;
 	top: 5px;
 	right: 5px;
 }
-.modulo .actions a {
+.acciones a {
 	background: #4a3b26;
 	color: #ffffff;
 	padding: 5px;
 	font-size: 13px;
 	border-radius: 3px;
 	display: inline-block;
+  text-decoration: none;
 }
-.modulo .actions a:hover {
+.acciones a:hover {
 	background: #ea9a31;
 }
 .recetas .likes i {
@@ -241,7 +242,7 @@ h4 {
  display: inline-block;
  color: #ffffff;
  font-family: 'open_sansbold';
- margin: -60px 0 30px 0;
+ margin: -60px 0 10px 0;
  padding: 10px 30px;
 }
 .banner {
@@ -325,4 +326,43 @@ h4 {
  top: 0;
  right: 20px;
  background: #4a3b26;
+}
+/* Preguntas */
+.bajada {
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+.bajada span {
+  padding: 15px 0;
+  font-size: 16px;
+  display: inline-block;
+}
+.btn.crear {
+  margin: 5px 0;
+}
+.preguntas h3 {
+  padding: 0;
+  font-size: 18px;
+  font-family: 'open_sansbold';
+}
+.preguntas .item {
+  background-color: #fafafa;
+  margin-bottom: 15px;
+  padding: 20px;
+  border: 1px solid #eaeaea;
+  position: relative;
+}
+.preguntas .item > p {
+  color: #808080;
+  font-size: 14px;
+  margin: 0;
+}
+.preguntas .item .ver {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #ea9a31;
+  padding: 2px 15px;
+  margin-right: 5px;
+  color: #ffffff;
+  border-radius: 3px;
 }

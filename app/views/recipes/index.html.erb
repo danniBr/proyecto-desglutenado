@@ -4,8 +4,10 @@
     <h1>Recetas</h1>
     <div class="row">
       <div class="col-md-12">
-        <span>Encuentra y comparte las mejores recetas sin gluten.</span>
-        <%= link_to 'Crear Receta', new_recipe_path, :class => 'btn float-right' %>
+        <div class="bajada">
+          <span>Encuentra y comparte las mejores recetas sin gluten.</span>
+          <%= link_to 'Crear Receta', new_recipe_path, :class => 'btn crear float-right' %>
+        </div>
       </div>
     </div>
     <p id="notice"><%= notice %></p>
@@ -26,7 +28,7 @@
                   <i class="fa fa-heart"></i><%= recipe.likes.count %>
                 </div>
             </a>
-            <div class="actions">
+            <div class="acciones">
               <% if can? :manage, recipe %>
                 <%= link_to edit_recipe_path(recipe) do %>
                   <i class="fa fa-edit"></i>
