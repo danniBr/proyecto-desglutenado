@@ -10,15 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery/dist/jquery
-//= require bootstrap/dist/js/bootstrap
+
 //= require rails-ujs
 //= require turbolinks
+//= require jquery/dist/jquery
+//= require bootstrap/dist/js/bootstrap
 //= require underscore/underscore
 //= require gmaps/google
 //= require_tree .
-
-//nav background on scroll
-// $(window).scroll(function(){
-// 	$('.navbar').toggleClass('scrolled', $(this).scrollTop() > 70);
-// });
