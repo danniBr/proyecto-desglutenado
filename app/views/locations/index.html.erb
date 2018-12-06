@@ -18,36 +18,10 @@
       </div>
       <div class="col-md-6">
         <div id="map" class="map"></div>
-        <script>
-
-          handler = Gmaps.build('Google');
-          handler.buildMap({
-            provider: {
-             center: new google.maps.LatLng({lat: -33.5, lng: -70.7}),
-             zoom: 10
-            },
-            internal: {
-             id: 'map'
-            }
-          },
-          function(){
-           markers = handler.addMarkers(<%=raw @hash.to_json %>);
-           google.maps.event.addListener(handler.getMap(), "center_changed", function(e){
-             var new_center = handler.getMap().getCenter();
-             var latitude = new_center.lat();
-             var longitude = new_center.lng();
-
-             $.ajax({
-              url: '/locations',
-              type: 'GET',
-              dataType: 'script',
-              data: {latitude: latitude, longitude: longitude}
-             });
-           });
-
-          });
-          </script>
       </div>
+      <script>
+        var hash = <%= raw @hash.to_json %>;
+      </script>
     </div>
   </div>
 </div>

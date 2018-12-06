@@ -277,6 +277,14 @@ h4 {
 	float: right;
 	font-size: 16px;
 }
+/* Locations */
+.locations {
+  padding-top: 20px;
+}
+.locations .map {
+  height: 400px;
+}
+/*Interiores */
 .interior h1 {
  background: #4a3b26;
  display: inline-block;
@@ -421,6 +429,18 @@ h4 {
   margin-right: 5px;
   color: #ffffff;
   border-radius: 3px;
+}
+.home.preguntas {
+  margin-top: 40px;
+  background: #87919a;
+  padding: 20px 0;
+}
+.home.preguntas h3.title {
+  color: #ffffff;
+}
+.home.preguntas .item {
+  background-color: #ffffff;
+  border: 0;
 }
 /* detalle preguntas*/
 .detalle-pregunta .titulo {

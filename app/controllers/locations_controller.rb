@@ -12,7 +12,7 @@ class LocationsController < ApplicationController
     if params[:latitude].present? && params[:longitude].present?
       @locations = Location.near(
         [params[:latitude], params[:longitude]],
-        10_000,
+        10,
         units: :km
       )
     else
@@ -34,7 +34,7 @@ end
      @location.user = current_user
      respond_to do |format|
       if @location.save
-        format.html { redirect_to @location, notice: 'location was successfully created.' }
+        format.html { redirect_to locations_path, notice: 'location was successfully created.' }
         format.json { render :show, status: :created, location: @location }
       else
         format.html { render :new }

@@ -55,15 +55,25 @@
 	</div>
 	<div class="locations">
 		<div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3>¿Donde Comprar? Ultimos agregados</h3>
+          <%= link_to 'Ver todas', locations_path, :class => 'btn ver-todo' %>
+        </div>
+      </div>
 			<div class="row">
 				<div class="col-md-6">
-					<!-- agregar mapa aquí -->
+			      <div id="map" class="map"></div>
+            <script>
+              var hash = <%= raw @hash.to_json %>;
+            </script>
 				</div>
-				<div class="col-md-6">
+				<div class="direccion col-md-6">
 					<% @locations.each do |location| %>
-							<div class="">
-								<a href="<%= location_path(location) %>" class="">
-								  <h4><%= location.location %></h4>
+							<div class="modulo">
+								<a href="<%= locations_path %>">
+                  <h5><%= location.title %></h5>
+                  <p><span>Descripción:</span> <%= location.location %></p>
 							  </a>
 						  </div>
 
@@ -72,4 +82,29 @@
 			</div>
 		</div>
 	</div>
+  <div class="row home preguntas">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="title">¿Tienes dudas? Preguntale a la comunidad</h3>
+          <%= link_to 'Ver todas', questions_path, :class => 'btn ver-todo' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <% @questions.each do |question| %>
+            <div class="item">
+              <%= link_to 'Ver', question, :class => 'ver' %>
+              <h3><%= question.title %></h3>
+              <p>
+                <span><em>Creada por : <%= question.user.name %></em></span>
+                | <span><em>Fecha : <%= question.created_at.to_date %></em></span>
+                | <span><%= question.comments.size %> Comentarios</span>
+              </p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
