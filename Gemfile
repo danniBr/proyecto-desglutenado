@@ -39,6 +39,7 @@ gem 'omniauth-facebook'
 gem 'activeadmin'
 gem 'cancancan'
 gem 'faker', :git => 'https://github.com/stympy/faker.git'
+gem 'arctic_admin'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -4,7 +4,7 @@ body {
  font-family: 'open_sansregular';
 }
 h1, h2, h3, h4, h5, h6 {
- color: #4a3b26; 
+ color: #4a3b26;
 }
 .navbar {
  z-index: 2;
@@ -186,12 +186,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 .inicio {
 	padding-top: 4rem;
-	background: #fafafa;
+	background: #e6e6e6;
 	margin-top: -12vh;
-	height: 85vh;
+}
+.inicio .db {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 75vh;
 }
 .inicio h2 {
-	padding-top: 10rem;
 	font-size: 2rem;
 	letter-spacing: -1px;
 }
@@ -200,6 +204,13 @@ h2 span {
 	display: block;
 	font-size: 3rem;
 	letter-spacing: -2px;
+}
+.inicio .texto {
+  display: block;
+  padding-top: 10px;
+  font-size: 14px;
+  letter-spacing: normal;
+  font-family: 'open_sansregular';
 }
 h3 {
   font-size: 1.2rem;

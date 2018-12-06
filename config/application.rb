@@ -17,5 +17,6 @@ module ProyectoDesglunado
     # Enable the asset pipeline
     config.assets.paths << Rails.root.join('vendor', 'assets', 'images', 'fonts')
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
+
   end
 end

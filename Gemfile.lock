@@ -61,6 +61,10 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arbre (1.1.1)
       activesupport (>= 3.0.0)
+    arctic_admin (1.5.2)
+      activeadmin (>= 1.1.0, < 2.0)
+      font-awesome-rails
+      jquery-rails
     arel (8.0.0)
     bcrypt (3.1.12)
     bindex (0.5.0)
@@ -101,6 +105,8 @@ GEM
     faraday (0.15.3)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
@@ -280,6 +286,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  arctic_admin
   byebug
   cancancan
   capybara (~> 2.13)

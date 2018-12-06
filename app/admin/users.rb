@@ -23,4 +23,28 @@ ActiveAdmin.register User do
    end
    actions
   end
+
+  form do |f|
+    inputs 'Agregar un nuevo usuario' do
+      input :email
+      input :name
+      input :photo
+      input :password
+     end
+     actions
+  end
+
+  permit_params :email, :name, :photo, :password
+
+  controller do
+ def update
+   if (params[:user][:password].blank? && params[:user]
+   [:password_confirmation].blank?)
+   params[:user].delete("password")
+   params[:user].delete("password_confirmation")
+   end
+   super
+   end
+  end
+
 end
