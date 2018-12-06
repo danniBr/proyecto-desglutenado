@@ -1,10 +1,13 @@
-<tr>
-  <td><%= location.title %></td>
-  <td><%= location.description %></td>
-  <td><%= location.location %></td>
-  <td><%= link_to 'Show', location %></td>
-  <% if can? :manage, location %>
-    <td><%= link_to 'Edit', edit_location_path(location) %></td>
-    <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  <% end %>
-</tr>
+<div class="col-md-12">
+  <div class="modulo">
+    <h3><%= location.title %></h3>
+    <p><span>Descripción:</span> <%= location.description %></p>
+    <p><span>Dirección: </span><%= location.location %></p>
+    <div class="acciones">
+      <% if can? :manage, location %>
+        <%= link_to 'Editar', edit_location_path(location) %>
+        <%= link_to 'Eliminar', location, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    </div>
+  </div>
+</div>

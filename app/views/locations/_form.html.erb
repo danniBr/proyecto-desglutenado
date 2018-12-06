@@ -1,8 +1,7 @@
 <%= form_with(model: location, remote: true) do |form| %>
   <% if location.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
-
+      <p><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</p>
       <ul>
       <% location.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,32 +11,27 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
+    <%= form.label :Título %>
     <%= form.text_field :title, id: :location_title %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :Descripción %>
     <%= form.text_area :description, id: :location_description %>
   </div>
 
   <div class="field">
-    <%= form.label :location %>
-    <div class="row">
-      <div class="col-md-10">
-        <%= form.text_field :location, id: :location_location %>
-      </div>
-      <div class="col-md-2">
-        <%= link_to '#', class: "btn btn-success", id:"findaddress" do %>
-          <i class="fa fa-map-marker"></i>
-        <% end %>
-      </div>
-    </div>
-    
+    <%= form.label :Dirección %>
+    <%= form.text_field :location, id: :location_location , :class => 'location' %>
+    <%= link_to '#', class: "btn btn-marcador", id:"findaddress" do %>
+      <i class="fa fa-map-marker"></i>
+    <% end %>
+
+
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "enviar", :class => 'btn' %>
   </div>
 
 
@@ -58,7 +52,7 @@ $("#findaddress").click(function(event){
   function getAddress(position) {
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
-    
+
     $.ajax({
       url: '/locations/findaddress',
       type: 'GET',
@@ -72,4 +66,3 @@ $("#findaddress").click(function(event){
 
 });
 </script>
-

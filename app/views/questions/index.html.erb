@@ -4,7 +4,6 @@
     <div class="row">
       <div class="col-md-12">
         <h1>Preguntas</h1>
-        <p id="notice"><%= notice %></p>
         <div class="bajada">
           <span>¿Tienes dudas? Preguntale a la comunidad.</span>
           <%= link_to 'Crear Pregunta', new_question_path, :class => 'btn crear float-right' %>
@@ -18,7 +17,8 @@
             <%= link_to 'Ver', question, :class => 'ver' %>
             <h3><%= question.title %></h3>
             <p>
-              <span><em>Creada el : <%= question.created_at %></em></span>
+              <span><em>Creada por : <%= question.user.name %></em></span>
+              | <span><em>Fecha : <%= question.created_at.to_date %></em></span>
               | <span><%= question.comments.size %> Comentarios</span>
             </p>
             <div class="acciones">

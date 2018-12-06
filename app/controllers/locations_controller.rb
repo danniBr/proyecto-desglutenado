@@ -47,6 +47,18 @@ end
     @location = Location.find(params[:id])
   end
 
+  def update
+    respond_to do |format|
+      if @location.update(location_params)
+        format.html { redirect_to locations_path, notice: 'La dirección fue actualizada correctamente.' }
+        format.json { render :show, status: :ok, location: @location }
+      else
+        format.html { render :edit }
+        format.json { render json: @location.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def destroy
     @location = Location.find(params[:id])
     @location.destroy

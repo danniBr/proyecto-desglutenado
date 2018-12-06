@@ -1,54 +1,53 @@
-<div class="container">
-  <p id="notice"><%= notice %></p>
+<div class="container-fluid interior direccion">
+  <div class="row banner"></div>
+  <div class="container">
+    <h1>Donde Comprar</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="bajada">
+          <span>Encuentra y comparte las mejores datos donde comprar productos sin gluten.</span>
+          <%= link_to 'Crear Dirección', new_location_path, :class => 'btn crear float-right' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <%= render @locations %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div id="map" class="map"></div>
+        <script>
 
-  <h1>locations</h1>
+          handler = Gmaps.build('Google');
+          handler.buildMap({
+            provider: {
+             center: new google.maps.LatLng({lat: -33.5, lng: -70.7}),
+             zoom: 10
+            },
+            internal: {
+             id: 'map'
+            }
+          },
+          function(){
+           markers = handler.addMarkers(<%=raw @hash.to_json %>);
+           google.maps.event.addListener(handler.getMap(), "center_changed", function(e){
+             var new_center = handler.getMap().getCenter();
+             var latitude = new_center.lat();
+             var longitude = new_center.lng();
 
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Desc</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
+             $.ajax({
+              url: '/locations',
+              type: 'GET',
+              dataType: 'script',
+              data: {latitude: latitude, longitude: longitude}
+             });
+           });
 
-    <tbody id="location">
-      <%= render @locations %>
-    </tbody>
-  </table>
-
-  <br>
-
-  <%= link_to 'New location', new_location_path %>
-
-  <div id="map" style="width:400px; height:400px"></div>
-  <script>
-
-    handler = Gmaps.build('Google');
-    handler.buildMap({
-      provider: {
-       center: new google.maps.LatLng({lat: -33.5, lng: -70.7}),
-       zoom: 10
-      },
-      internal: {
-       id: 'map'
-      }
-    },
-    function(){
-     markers = handler.addMarkers(<%=raw @hash.to_json %>);
-     google.maps.event.addListener(handler.getMap(), "center_changed", function(e){
-       var new_center = handler.getMap().getCenter();
-       var latitude = new_center.lat();
-       var longitude = new_center.lng();
-
-       $.ajax({
-        url: '/locations',
-        type: 'GET',
-        dataType: 'script',
-        data: {latitude: latitude, longitude: longitude}
-       });
-     });
-
-    });
-    </script>
+          });
+          </script>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,6 +1,14 @@
-<h1>Editing location</h1>
-
-<%= render 'form', location: @location %>
-
-<%= link_to 'Show', @location %> |
-<%= link_to 'Back', locations_path %>
+<div class="form container-fluid">
+  <div class="row">
+    <div class="bg col-md-3">
+      <%= link_to 'Volver a Donde comprar', locations_path, :class => 'btn volver' %>
+      <i class="fa fa-map-marker"></i>
+    </div>
+    <div class="col-md-9">
+      <div class="container">
+        <h1>Editar Dirección</h1>
+        	<%= render 'form', location: @location %>
+      </div>
+    </div>
+  </div>
+</div>

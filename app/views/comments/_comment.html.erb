@@ -1,6 +1,11 @@
 <li id="<%= comment.id %>">
-	<%= comment.comment %>
+	<div class="">
+		<p><%= comment.comment %></p>
+		<span class="autor">Creado por: <%= comment.user.name %> | <%= comment.created_at.to_formatted_s :long_ordinal %></span>
+	</div>
 	<% if can? :manage, comment %>
-	  <%= link_to 'Destroy', delete_comment_path(@question, comment) , method: :delete, data: { remote: true, confirm: 'Are you sure?' } %>
+		<div class="acciones">
+			<%= link_to 'Eliminar', delete_comment_path(@question, comment) , method: :delete, data: { remote: true, confirm: 'Are you sure?' } %>
+		</div>
 	<% end %>
 </li>
