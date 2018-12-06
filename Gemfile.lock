@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/stympy/faker.git
+  revision: aca03bed6918ece830a62fd73085de5db20282b6
+  specs:
+    faker (1.9.1)
+      i18n (>= 0.7)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -279,6 +286,7 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.2)
   devise
+  faker!
   geocoder
   gmaps4rails
   jbuilder (~> 2.5)

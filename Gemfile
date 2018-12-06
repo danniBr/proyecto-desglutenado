@@ -38,6 +38,7 @@ gem 'gmaps4rails'
 gem 'omniauth-facebook'
 gem 'activeadmin'
 gem 'cancancan'
+gem 'faker', :git => 'https://github.com/stympy/faker.git'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

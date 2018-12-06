@@ -7,6 +7,6 @@ class Recipe < ApplicationRecord
 	has_many :comments
 	has_many :likes
 
-  validates :title, :ingredients, :description , :presence => true
+  validates :title, :ingredients, :directions , :presence => true
 	validates :cant, numericality: true
 end
