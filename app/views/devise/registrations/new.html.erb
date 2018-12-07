@@ -14,10 +14,10 @@
               <%= f.email_field :email, autocomplete: "email", placeholder: 'Email' %>
             </div>
             <div class="field">
-              <%= f.password_field :password, autocomplete: "new-password", placeholder: 'contraseña' %>
+              <%= f.password_field :password, autocomplete: "new-password", placeholder: 'Contraseña' %>
             </div>
             <div class="field">
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'repetir contraseña' %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Repetir contraseña' %>
               <% if @minimum_password_length %>
               <em class="minimo">(mínimo <%= @minimum_password_length %> caracteres)</em>
               <% end %>
