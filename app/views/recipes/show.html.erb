@@ -16,10 +16,11 @@
         <span class="num-like">
           <%= @recipe.likes.count %>
         </span>
-        <% if current_user.present? %>
-            <%= link_to "Me gusta", recipe_likes_path(@recipe), method: :post, :remote => true %>
-        <% end %>
-
+        <div id="like" class="btn-like">
+          <% if current_user.present? && !@recipe.likes.pluck(:user_id).include?(current_user.id) %>
+              <%= link_to "Me gusta", recipe_likes_path(@recipe), method: :post, :remote => true %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

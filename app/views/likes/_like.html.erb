@@ -1,0 +1,3 @@
+<% if current_user.present? && !@recipe.likes.pluck(:user_id).include?(current_user.id) %>
+    <%= link_to "Me gusta", recipe_likes_path(@recipe), method: :post, :remote => true %>
+<% end %>

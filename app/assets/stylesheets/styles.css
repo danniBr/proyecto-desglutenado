@@ -88,8 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 .color4 {
  background-color: #5c3024;
 }
-
-.notice, .alert {
+.notice , .alert {
   max-width: 90%;
   background: #e9f5ff;
   padding: 18px;
@@ -307,6 +306,9 @@ h4 {
 .banner {
   background: url(img-banner.jpg) no-repeat fixed 0 bottom;
 }
+.detalle {
+  padding-top: 20px;
+}
 .detalle h1 {
   font-family: 'open_sansbold';
   text-transform: uppercase;
@@ -523,4 +525,12 @@ h4 {
   border-radius: 3px;
   padding: 5px 20px;
   vertical-align: top;
+}
+/*recipe likes*/
+.btn-like {
+  display: inline-block;
+  margin: 0 5px;
+}
+.btn-like a {
+  color: #ea9a31;
 }
