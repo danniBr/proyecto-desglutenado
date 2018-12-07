@@ -6,20 +6,24 @@
     <div class="col-md-7">
       <%= link_to 'Volver', recipes_path, :class => 'btn' %>
       <h1><%= @recipe.title %></h1>
-      <% if can? :manage, @recipe %>
-        <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
-      <% end %>
-      <p>Preparación para <%= @recipe.cant %> personas </p>
-      <p><i class="fa fa-stopwatch"></i> Tiempo de preparación: <%= @recipe.ingredients %></p>
-      <div class="dato likes">
-        <i class="fa fa-heart"></i>
-        <span class="num-like">
-          <%= @recipe.likes.count %>
-        </span>
-        <div id="like" class="btn-like">
-          <% if current_user.present? && !@recipe.likes.pluck(:user_id).include?(current_user.id) %>
-              <%= link_to "Me gusta", recipe_likes_path(@recipe), method: :post, :remote => true %>
+      <div class="receta-datos">
+        <div class="acciones">
+          <% if can? :manage, @recipe %>
+            <%= link_to 'Editar receta ', edit_recipe_path(@recipe) %>
           <% end %>
+        </div>
+        <p><i class="fa fa-user"></i>Preparación para <%= @recipe.cant %> personas </p>
+        <p><i class="fa fa-clock-o"></i>Tiempo de preparación: <%= @recipe.duration.strftime("%H:%M") %></p>
+        <div class="dato likes">
+          <i class="fa fa-heart"></i>
+          <span class="num-like">
+            <%= @recipe.likes.count %>
+          </span>
+          <div id="like" class="btn-like">
+            <% if current_user.present? && !@recipe.likes.pluck(:user_id).include?(current_user.id) %>
+                <%= link_to "Me gusta", recipe_likes_path(@recipe), method: :post, :remote => true %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

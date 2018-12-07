@@ -5,6 +5,7 @@ Recipe.destroy_all
 Location.destroy_all
 Comment.destroy_all
 Question.destroy_all
+Like.destroy_all
 User.destroy_all
 
 5.times do |i|
@@ -20,6 +21,7 @@ end
     title: Faker::Food.dish,
     photo: open("https://loremflickr.com/600/400/recipe/"),
     cant: 1+i,
+    duration: "0000-00-00 01:30",
     ingredients: Faker::Food.ingredient,
     directions: Faker::Lorem.paragraph(2),
     user: User.first
@@ -45,7 +47,7 @@ end
   )
 end
 
-5.times do |i|
+3.times do |i|
   Comment.create!(
     user: User.last,
     question: Question.last,

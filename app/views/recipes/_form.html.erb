@@ -22,6 +22,11 @@
   </div>
 
   <div class="field">
+    <%= form.label :Duración %>
+    <%= form.time_field :duration, id: :recipe_duration %>
+  </div>
+
+  <div class="field">
     <%= form.label :Foto %>
     <span class="btn-file">
         <i class="fa fa-camera"></i> Subir foto

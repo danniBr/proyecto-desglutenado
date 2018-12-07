@@ -318,7 +318,6 @@ h4 {
 .detalle .likes i {
   color: #e20e3f;
   font-size: 30px;
-  padding: 7px;
 }
 .detalle .dato.likes {
   font-size: 20px;
@@ -389,7 +388,7 @@ h4 {
  resize: none;
 }
 .form textarea.receta {
-  height: 180px;
+  height: 120px;
   width: 80%;
 }
 .form .btn-file {
@@ -533,4 +532,11 @@ h4 {
 }
 .btn-like a {
   color: #ea9a31;
+}
+.receta-datos {
+  position: relative;
+}
+.receta-datos i {
+  font-size: 20px;
+  margin-right: 10px;
 }
