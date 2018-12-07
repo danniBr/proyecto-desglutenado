@@ -63,7 +63,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #4a3b26;
   display: block;
   font-size: 14px;
-  border-top: 1px solid #e6e6e6;
+  background-color: #e8e8e8;
+  border-top: 1px solid #bfbfbf;
 }
 .navbar .desplegable a:first-child {
   border: 0;
@@ -539,4 +540,97 @@ h4 {
 .receta-datos i {
   font-size: 20px;
   margin-right: 10px;
+}
+.navbar-toggler-icon .fa.fa-navicon {
+  color: #4e3d2c;
+  font-size: 27px;
+}
+@media (max-width:992px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  .inicio h2 {
+      font-size: 1.2rem;
+      letter-spacing: 0;
+  }
+  h2 span {
+    font-size: 2rem;
+    letter-spacing: 0;
+  }
+  .inicio .db {
+    height: 50vh;
+  }
+  .navbar-collapse {
+      background: #ffffff;
+  }
+  .navbar .btn {
+  background: #513f31;
+    width: 100%;
+    border-radius: 0;
+    padding: 9px;
+    border-bottom: 1px solid #ffffff;
+    margin: 0;
+  }
+  .navbar .btn-user {
+    color: #ffffff;
+  }
+  .login h2 {
+    padding-top: 2rem;
+  }
+  .btn, input.btn {
+      padding: 7px 15px;
+      border-radius: 25px;
+      margin: 10px 0;
+    }
+}
+@media (max-width:768px) {
+  .navbar-brand {
+    padding: 0px;
+  }
+  .navbar-brand img {
+    width: 180px;
+  }
+  h2 span {
+    font-size: 1.5rem;
+  }
+  .inicio .db {
+    height: 35vh;
+    text-align: center;
+  }
+  .inicio .db img {
+    width: 85%;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  .recetas .dato > span {
+    display: inline-block;
+  }
+  .recetas .dato.likes {
+    float: none;
+  }
+  .fondo-signup, .fondo-login {
+    height: 30vh;
+    background-position: 0 center;
+  }
+  .detalle h2 {
+    font-size: 16px;
+  }
+}
+@media (max-width:480px) {
+  .navbar-brand img {
+    width: 140px;
+  }
+  body {
+    font-size: 14px;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  h2 span {
+    font-size: 1.5rem;
+  }
+  h3 {
+      padding: 30px 0 10px;
+    }
 }
