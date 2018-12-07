@@ -444,7 +444,7 @@ h4 {
 }
 .home.preguntas {
   margin-top: 40px;
-  background: #87919a;
+  background: #adadad;
   padding: 20px 0;
 }
 .home.preguntas h3.title {
@@ -492,7 +492,7 @@ h4 {
 }
 /* Donde comprar */
 .direccion .banner {
-   background: url(img-banner-direccion.jpg) no-repeat fixed 0 62%;
+   background: url(img-banner-direccion.jpg) no-repeat fixed 0 bottom;
 }
 .map {
   width: 100%;
